@@ -24,3 +24,12 @@ function greet(person: string, date: Date) {
 greet("Barry", new Date());
 
 
+function greetOptional(obj: { person: string, age?: number }) {
+    console.log("Hello " + obj.person + ", youre age is " + (obj.age !== undefined ? obj.age : 0));
+}
+
+greetOptional({ person: "betty", age: 23 });
+
+
+
+
