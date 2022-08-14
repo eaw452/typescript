@@ -12,7 +12,6 @@ interface Named {
 
 function check(valid: Pointlike | Named): void {
     console.log(valid.name);
-    console.log("hello");
 }
 
 const j = { x: 5, y: 9, name: "me" }
