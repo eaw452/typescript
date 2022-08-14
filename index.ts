@@ -42,5 +42,28 @@ welcomePeople(["john", "harry", "bob"]);
 welcomePeople("Ryan");
 
 
+type ID = string | number;
+function printID(id: ID) {
+    if (typeof id === "string") {
+        console.log("id is " + id.toUpperCase());
+    } else {
+        console.log("id is " + id);
+    }
+}
+printID("twenty");
+printID(20);
+
+let greeting: "hello" | "hi" = "hello";
+console.log(greeting);
+
+function printGreeting(greet: "hello" | "hi" | "howdy") {
+    console.log(greet);
+}
+
+printGreeting("hi");
+
+
+
+
 
 

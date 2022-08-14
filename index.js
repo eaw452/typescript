@@ -27,3 +27,19 @@ function welcomePeople(peeps) {
 }
 welcomePeople(["john", "harry", "bob"]);
 welcomePeople("Ryan");
+function printID(id) {
+    if (typeof id === "string") {
+        console.log("id is " + id.toUpperCase());
+    }
+    else {
+        console.log("id is " + id);
+    }
+}
+printID("twenty");
+printID(20);
+var greeting = "hello";
+console.log(greeting);
+function printGreeting(greet) {
+    console.log(greet);
+}
+printGreeting("hi");
