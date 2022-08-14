@@ -8,3 +8,7 @@ function check(valid) {
 }
 var j = { x: 5, y: 9, name: "me" };
 check(j);
+function greet(person, date) {
+    console.log("Hello ".concat(person, ", today is ").concat(date.toDateString(), "!"));
+}
+greet("Barry", new Date());

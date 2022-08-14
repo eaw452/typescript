@@ -16,3 +16,11 @@ function check(valid: Pointlike | Named): void {
 
 const j = { x: 5, y: 9, name: "me" }
 check(j);
+
+function greet(person: string, date: Date) {
+    console.log(`Hello ${person}, today is ${date.toDateString()}!`);
+}
+
+greet("Barry", new Date());
+
+
