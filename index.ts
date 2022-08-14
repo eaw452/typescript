@@ -30,6 +30,17 @@ function greetOptional(obj: { person: string, age?: number }) {
 
 greetOptional({ person: "betty", age: 23 });
 
+function welcomePeople(peeps: string[] | string) {
+    if (Array.isArray(peeps)) {
+        console.log("Hello, " + peeps.join(", "));
+    } else {
+        console.log("Welcome one traveler, " + peeps);
+    }
+}
+
+welcomePeople(["john", "harry", "bob"]);
+welcomePeople("Ryan");
+
 
 
 
