@@ -39,7 +39,20 @@ printID("twenty");
 printID(20);
 var greeting = "hello";
 console.log(greeting);
+//literal types - must be one of the strings listed or of Options type (object with greeting property)
 function printGreeting(greet) {
-    console.log(greet);
+    console.log(typeof greet === "object" ? greet.greeting : greet);
 }
 printGreeting("hi");
+//printGreeting("yo");
+printGreeting({ greeting: 20 });
+function dosomething(x) {
+    return x === null ? 0 : x;
+}
+dosomething(null);
+//using ! allows us to tell typescript that this variable will NOT be null for sure
+// using ? means its an optional var
+function dosomething2(x) {
+    return x.toFixed();
+}
+console.log(dosomething2(3));
