@@ -241,6 +241,31 @@ function getArea(shape: Shape) {
 
 console.log(getArea({ kind: "circle", radius: 5 }));
 
+interface Triangle {
+    kind: "triangle";
+    sideLength: number;
+}
+type Shape2 = Circle | Square | Triangle;
+//using never type for exhaustiveness checking
+function getAreaCheck(shape: Shape2) {
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius ** 2;
+        case "square":
+            return shape.sideLength ** 2;
+        case "triangle":
+            return Math.sqrt(3) / 4 * shape.sideLength ** 2;  //must include case for Triangle.
+        default:
+            const _exchaustiveCheck: never = shape;  //will catch any cases not included in switch
+            return _exchaustiveCheck;
+    }
+}
+
+console.log(getAreaCheck({ kind: "triangle", sideLength: 2 }));
+
+
+
+
 
 
 
