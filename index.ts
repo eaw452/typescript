@@ -84,6 +84,35 @@ function dosomething2(x?: number | null): number | string {
 console.log(dosomething2(3));
 
 
+//null is of type "object" , so TS will check to ensure we narrow down with null
+//perform truthiness check on strs to ensure it is not null  "strs && etc."
+function printAll(strs: string | string[] | null) {
+    if (strs && typeof strs === "object") {
+        for (const s of strs) {
+            console.log(s);  //could be null!!  will not compile !
+        }
+    } else if (strs && typeof strs === "string") {
+        console.log(strs);
+    } else {
+        console.log("strs is null");
+    }
+}
 
+printAll(null);
+
+interface Container {
+    value: number | null | undefined;
+}
+
+function multiplyVal(container: Container, factor: number) {
+    //Remove both null and undefined types
+    if (container.value != null) {
+        //now we can safely multiply the value
+        container.value *= factor;
+        console.log(container.value);
+    }
+}
+
+multiplyVal({ value: 10 }, 5);
 
 

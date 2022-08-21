@@ -56,3 +56,29 @@ function dosomething2(x) {
     return x.toFixed();
 }
 console.log(dosomething2(3));
+//null is of type "object" , so TS will check to ensure we narrow down with null
+//perform truthiness check on strs to ensure it is not null  "strs && etc."
+function printAll(strs) {
+    if (strs && typeof strs === "object") {
+        for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
+            var s = strs_1[_i];
+            console.log(s); //could be null!!  will not compile !
+        }
+    }
+    else if (strs && typeof strs === "string") {
+        console.log(strs);
+    }
+    else {
+        console.log("strs is null");
+    }
+}
+printAll(null);
+function multiplyVal(container, factor) {
+    //Remove both null and undefined types
+    if (container.value != null) {
+        //now we can safely multiply the value
+        container.value *= factor;
+        console.log(container.value);
+    }
+}
+multiplyVal({ value: 10 }, 5);
