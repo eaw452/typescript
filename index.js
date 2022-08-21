@@ -82,3 +82,18 @@ function multiplyVal(container, factor) {
     }
 }
 multiplyVal({ value: 10 }, 5);
+function move(animal) {
+    if ("swim" in animal) {
+        animal.swim();
+    }
+    else {
+        animal.fly();
+    }
+}
+function example() {
+    console.log("fly example!");
+}
+var bird1 = { fly: function () { console.log("fly!"); } };
+var bird2 = { fly: example };
+move(bird1);
+move(bird2);

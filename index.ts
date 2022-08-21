@@ -116,3 +116,30 @@ function multiplyVal(container: Container, factor: number) {
 multiplyVal({ value: 10 }, 5);
 
 
+//use of the "in" operator for narrowing.
+//checks whether an object has a property with the specified name
+type Fish = {
+    swim: () => void
+}
+type Bird = {
+    fly: () => void
+}
+function move(animal: Bird | Fish) {
+    if ("swim" in animal) {
+        animal.swim();
+    } else {
+        animal.fly();
+    }
+}
+function example() {
+    console.log("fly example!");
+}
+var bird1: Bird = { fly: () => { console.log("fly!"); } };  //use of anonymous func
+var bird2: Bird = { fly: example };
+move(bird1);
+move(bird2);
+
+
+
+
+
