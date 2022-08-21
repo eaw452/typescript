@@ -199,8 +199,8 @@ function getSmallPet(): Fish | Bird {
 }
 //Type predicate is used as a return type for this function  'paramName is type'
 function isFish(pet: Bird | Fish): pet is Fish {
-    //return (pet as Fish).swim !== null; //results in true regardless - maybe with target es2015
-    return Boolean((pet as Fish).swim);
+    return (pet as Fish).swim !== undefined;
+    //return Boolean((pet as Fish).swim);  //or can use truthiness narrowing by narrow to boolean
 }
 
 let pet: Fish | Bird = getSmallPet();

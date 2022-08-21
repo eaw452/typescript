@@ -145,8 +145,8 @@ function getSmallPet() {
 }
 //Type predicate is used as a return type for this function  'paramName is type'
 function isFish(pet) {
-    //return (pet as Fish).swim !== null; //results in true regardless - maybe with target es2015
-    return Boolean(pet.swim);
+    return pet.swim !== undefined;
+    //return Boolean((pet as Fish).swim);  //or can use truthiness narrowing by narrow to boolean
 }
 let pet = getSmallPet();
 //Type predicates allows us to instead of using the below type assertions 'varName as type'
