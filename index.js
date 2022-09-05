@@ -184,4 +184,6 @@ function getAreaCheck(shape) {
             return _exchaustiveCheck;
     }
 }
+
 console.log(getAreaCheck({ kind: "triangle", sideLength: 2 }));
+
