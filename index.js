@@ -185,5 +185,7 @@ function getAreaCheck(shape) {
     }
 }
 
+
+
 console.log(getAreaCheck({ kind: "triangle", sideLength: 2 }));
 
